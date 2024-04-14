@@ -19,6 +19,7 @@ resource "aws_security_group" "example" {
 resource "aws_instance" "nginx_instance" {
   ami           = "ami-080e1f13689e07408"
   instance_type = "t2.micro"
+  key_name      = "AHost"
   security_groups = ["magic123"]
 
   tags = {
