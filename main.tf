@@ -19,7 +19,7 @@ resource "aws_security_group" "example" {
 resource "aws_instance" "nginx_instance" {
   ami           = "ami-080e1f13689e07408"
   instance_type = "t2.micro"
-  key_name      = "AHost"
+  key_name      = "target_host"
   security_groups = ["magic123"]
 
   tags = {
@@ -30,5 +30,3 @@ resource "aws_instance" "nginx_instance" {
     command = "ansible-playbook -i '${self.public_ip},' playbook.yml"
   }
 }
-
-
